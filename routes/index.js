@@ -27,6 +27,4 @@ router.get('/mostrarPro',function (req,res,next) {
   res.render('mostrarPro');
 });
 
-
-
 module.exports = router;

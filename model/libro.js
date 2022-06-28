@@ -4,7 +4,8 @@ module.exports = {
     },
 
     insertar: function (conexion, datos,archivos, funcion) {
-        conexion.query("INSERT INTO libros (titulo,descripcion,imagen,categoria) VALUES (?,?,?,?)", [datos.titulo, datos.descripcion, archivos.filename, datos.categoria], funcion);
+        conexion.query("INSERT INTO libros (titulo,descripcion,imagen,categoria) VALUES (?,?,?,?)", 
+        [datos.titulo, datos.descripcion, archivos.filename, datos.categoria], funcion);
     },
 
     retornarDatosID:function (conexion,id,funcion) {
@@ -16,11 +17,12 @@ module.exports = {
     },
 
     actualizar: function (conexion, datos, funcion) {
-        conexion.query("UPDATE libros SET titulo=?, descripcion=?, categoria=?  WHERE id = ?", [datos.titulo, datos.descripcion, datos.categoria, datos.id], funcion);
+        conexion.query("UPDATE libros SET titulo=?, descripcion=?, categoria=?  WHERE id = ?", 
+        [datos.titulo, datos.descripcion, datos.categoria, datos.id], funcion);
     },
     
     actualizarArchivo: function (conexion, datos,archivos, funcion) {
-        conexion.query("UPDATE libros SET imagen=?  WHERE id = ?", [archivos.filename, datos.id], funcion);
+        conexion.query("UPDATE libros SET imagen=?  WHERE id = ?", [archivos.filename, datos.id], 
+        funcion);
     }
-
 }
